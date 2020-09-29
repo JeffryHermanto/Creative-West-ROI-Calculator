@@ -9,7 +9,7 @@ html {
 }
 
 .main {
-  width: 400px;
+  width: 90%;
   margin: 50px auto;
 }
 
@@ -138,4 +138,18 @@ input::-webkit-inner-spin-button {
   color: red;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .main {
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .main {
+    width: 450px;
+  }
 }
