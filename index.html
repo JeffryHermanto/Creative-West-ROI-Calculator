@@ -14,6 +14,19 @@
   <body>
     <div class="main">
       <h1 class="title">ROI Calculator</h1>
+
+      <div class="result">
+        <p>
+          Hours per month saved:
+          <span class="hours-per-month-saved red-text"></span> hours
+        </p>
+        <p>
+          Euros per month saved:
+          <span class="euros-per-month-saved red-text"></span>
+        </p>
+        <hr class="divider" />
+      </div>
+
       <form class="form">
         <h2 class="label">I have ...</h2>
         <input
@@ -40,18 +53,7 @@
         <button class="calculate-button">Calculate</button>
       </form>
 
-      <div class="result">
-        <hr class="divider" />
-        <p>
-          Hours per month saved:
-          <span class="hours-per-month-saved red-text"></span> hours
-        </p>
-        <p>
-          Euros per month saved:
-          <span class="euros-per-month-saved red-text"></span>
-        </p>
-        <button class="reset-button">Reset</button>
-      </div>
+      <button class="reset-button">Reset</button>
     </div>
 
     <script src="app.js"></script>
