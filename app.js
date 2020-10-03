@@ -1,7 +1,6 @@
 const form = document.querySelector(".form");
-const result = document.querySelector(".result");
-const resetButton = document.querySelector(".reset-button");
 const error = document.querySelector(".error");
+const result = document.querySelector(".result");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -28,35 +27,26 @@ function calculate(numberOfEmployees, hoursPerWeek, costsPerHour) {
   const savedTimePercentage = 0.35;
   const workingWeekAveragePerMonth = 4.3333;
 
-  const hoursPerWeekSaved =
+  const hoursSavedPerWeek =
     numberOfEmployees * hoursPerWeek * savedTimePercentage;
-  const eurosPerWeekSaved = hoursPerWeekSaved * costsPerHour;
-  const hoursPerMonthSaved = hoursPerWeekSaved * workingWeekAveragePerMonth;
-  const eurosPerMonthSaved = hoursPerMonthSaved * costsPerHour;
+  const eurosSavedPerWeek = hoursSavedPerWeek * costsPerHour;
+  const hoursSavedPerMonth = hoursSavedPerWeek * workingWeekAveragePerMonth;
+  const eurosSavedPerMonth = hoursSavedPerMonth * costsPerHour;
 
-  console.log("Hours per week saved:", hoursPerWeekSaved);
-  console.log("Euros per week saved:", eurosPerWeekSaved);
-  console.log("Hours per month saved:", hoursPerMonthSaved);
-  console.log("Euros per month saved:", eurosPerMonthSaved);
+  console.log("Hours saved per week:", hoursSavedPerWeek);
+  console.log("Euros saved per week:", eurosSavedPerWeek);
+  console.log("Hours saved per month:", hoursSavedPerMonth);
+  console.log("Euros saved per month:", eurosSavedPerMonth);
 
-  result.querySelector(".hours-per-month-saved").textContent = Math.floor(
-    hoursPerMonthSaved
+  result.querySelector("#hoursSavedPerMonth").value = Math.floor(
+    hoursSavedPerMonth
   );
 
-  result.querySelector(
-    ".euros-per-month-saved"
-  ).textContent = `€ ${numberWithCommas(Math.floor(eurosPerMonthSaved))}`;
-
-  result.classList.add("active");
+  result.querySelector("#eurosSavedPerMonth").value = numberWithCommas(
+    Math.floor(eurosSavedPerMonth)
+  );
 }
 
-resetButton.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  form.reset();
-  result.classList.remove("active");
-});
-
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }

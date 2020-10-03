@@ -12,48 +12,48 @@
   </head>
 
   <body>
-    <div class="main">
-      <h1 class="title">ROI Calculator</h1>
-
-      <div class="result">
-        <p>
-          Hours per month saved:
-          <span class="hours-per-month-saved red-text"></span> hours
-        </p>
-        <p>
-          Euros per month saved:
-          <span class="euros-per-month-saved red-text"></span>
-        </p>
-        <hr class="divider" />
-      </div>
-
+    <div class="card">
+      <h1>ROI Calculator</h1>
       <form class="form">
-        <h2 class="label">I have ...</h2>
-        <input
-          type="number"
-          name="numberOfEmployees"
-          class="text-field"
-          placeholder="Number of Employees that use PowerPoint"
-        />
-        <h2 class="label">They spend ...</h2>
-        <input
-          type="number"
-          name="hoursPerWeek"
-          class="text-field"
-          placeholder="Hours per week in PowerPoint averagely"
-        />
-        <h2 class="label">They cost averagely ...</h2>
-        <input
-          type="number"
-          name="costsPerHour"
-          class="text-field"
-          placeholder="Costs Per Hour"
-        />
+        <div class="container">
+          <div>
+            <h2>Employees that use PowerPoint</h2>
+            <input type="number" name="numberOfEmployees" />
+          </div>
+          <div>
+            <h2>Average hours per week</h2>
+            <input type="number" name="hoursPerWeek" />
+          </div>
+          <div>
+            <h2>Average cost per hour</h2>
+            <div class="cost">
+              <span class="euro">€</span>
+              <input type="number" name="costsPerHour" />
+            </div>
+          </div>
+        </div>
         <p class="error"></p>
         <button class="calculate-button">Calculate</button>
       </form>
+    </div>
 
-      <button class="reset-button">Reset</button>
+    <div class="card">
+      <div class="result">
+        <h1>Results</h1>
+        <div class="container">
+          <div>
+            <h2>Hours saved per month</h2>
+            <input type="number" id="hoursSavedPerMonth" />
+          </div>
+          <div>
+            <h2>Euros saved per month</h2>
+            <div class="cost">
+              <span class="euro">€</span>
+              <input type="number" id="eurosSavedPerMonth" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
