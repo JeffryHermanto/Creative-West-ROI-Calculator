@@ -1,8 +1,9 @@
 const form = document.querySelector(".form");
 const error = document.querySelector(".error");
 const result = document.querySelector(".result");
+const calculateButton = document.querySelector("#calculate");
 
-form.addEventListener("submit", (e) => {
+const calculateScript = (e) => {
   e.preventDefault();
 
   const numberOfEmployees = parseInt(form.numberOfEmployees.value);
@@ -19,7 +20,11 @@ form.addEventListener("submit", (e) => {
   } else {
     calculate(numberOfEmployees, hoursPerWeek, costsPerHour);
   }
-});
+};
+
+calculateButton.addEventListener("touchstart", calculateScript);
+
+form.addEventListener("submit", calculateScript);
 
 function calculate(numberOfEmployees, hoursPerWeek, costsPerHour) {
   error.textContent = "";

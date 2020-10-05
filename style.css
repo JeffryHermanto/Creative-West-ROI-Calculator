@@ -96,6 +96,7 @@ input::-webkit-inner-spin-button {
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .calculate-button:hover {
